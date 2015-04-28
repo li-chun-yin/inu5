@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+<script src="/js/jquery/jquery.js"></script>
+<script type="text/javascript" src="/js/intranet/default.js"></script>
+<link rel="stylesheet" type="text/css" href="/css/intranet/default.css" media="all" />
+<link rel="stylesheet" type="text/css" href="/css/intranet/login/index.css" />
+</head>
+<body>
+<div id="distance"></div>
+<div id="container">
+	<div id="top"><h1>Administrator</h1></div>
+	<div id="form-container">
+		<form method="post" name="login_form">
+			<fieldset>
+				<legend>Login</legend>
+				<ol>
+					<li>
+						<label class="field-title">Username:</label>
+						<label class="txt-field"><input type="text" id="admin_id" name="admin_id" /></label>
+					</li>
+					<li>
+						<label class="field-title">Password:</label>
+						<label class="txt-field"><input type="password" id="admin_pwd" name="admin_pwd" /></label>
+					</li>
+					<li style="width:535px;">
+						<div class="align-right"><input type="image" src="/images/intranet/login/bt-login.gif" class="btn" id="js_login" /></div>
+					</li>
+				</ol>
+			</fieldset>
+			<span class="clearFix">&nbsp;</span>
+		</form>
+	</div>
+</div>
+<script src="/js/intranet/login/index.js" type="text/javascript"></script>
+</body>
+</html>

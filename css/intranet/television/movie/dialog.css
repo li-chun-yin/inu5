@@ -1,0 +1,3 @@
+@CHARSET "UTF-8";
+#dialog th{width:100px;}
+#dialog .movie_online_url,#dialog .movie_download_url,#dialog #movie_list_img_url,#dialog #movie_page_img_url{width:80%;}

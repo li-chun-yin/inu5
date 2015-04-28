@@ -1,0 +1,14 @@
+@CHARSET "UTF-8";
+#action_bar{
+	border-top:1px solid #DBDBDB;
+	border-bottom:1px solid #DBDBDB;
+	height:25px;
+}
+#auto_bar {
+	width:70%;
+	margin:auto;
+	padding:5px;
+}
+#auto_bar .auto_url{
+	width:70%;
+}

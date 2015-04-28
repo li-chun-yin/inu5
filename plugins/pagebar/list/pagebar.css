@@ -1,0 +1,12 @@
+@CHARSET "UTF-8";
+ul.pagebar li{
+	float:left;
+	cursor:pointer;
+	margin-left: 5px;
+}
+ul.pagebar li:hover{
+	text-decoration:underline;
+}
+ul.pagebar li.active{
+	color:red;
+}

@@ -1,0 +1,39 @@
+正在通过RSS进行电影自动采集......
+<script type="text/javascript">
+	var crawl_files = <?php echo $this->crawl_files;?>;
+	var i	= 0,j	= 0;
+	var urls		= {};
+	var curl_len	= 0;
+	var file_len	= crawl_files.length;
+	var read = function(){
+		$.post('/intranet/rss/read/',{'url':urls[j]},function(){
+			j++;
+			if(j == curl_len){
+				j=0;
+				setTimeout("getUrl()",3000);
+			}else{
+				setTimeout("read()",3000);
+			}
+		},'json');
+	};
+	var getUrl = function(){
+		$.post('/intranet/rss/get-url/',{'crawl_file':crawl_files[i]},function(json){
+			i++;
+			if(i == file_len){
+				document.write('采集完成.');
+				return;
+			}
+			if(json.error == false){
+				j		= 0;
+				urls	= json.urls;
+				curl_len= urls.length;
+				if(curl_len > 0 ){
+					setTimeout("read()",3000);
+				}else{
+					setTimeout("getUrl()",3000);
+				}
+			}
+		},'json');
+	};
+	getUrl();
+</script>

@@ -1,0 +1,119 @@
+@CHARSET "UTF-8";
+div#movie_info
+{
+	height:260px;
+
+}
+div#movie_info img
+{
+	width:	200px;
+	height:	250px;
+	margin-right:20px;
+}
+
+#movie_info h1
+{
+	font-weight:normal;
+	display:inline;
+	font-size:12px;
+	color:#0360AF;
+	margin:0;
+	padding:0;
+}
+
+div#movie_info ul li
+{
+	margin-bottom: 20px;
+}
+div#movie_info ul li strong{
+	color:#666666;
+}
+div#movie_info ul li span,
+div#movie_info div#bdshare a
+{
+	color:#0360AF;
+}
+div#movie_info ul li span.red{
+	color:red;
+}
+div#movie_ad
+{
+	width:250px;
+	float:left;
+	margin-top:20px;
+}
+div#movie_link
+{
+	
+	border:	1px solid #DCDCDC;
+	padding:10px 0;
+}
+
+div#movie_link h1
+{
+	font-size:	14px;
+	margin:		0;
+	padding:	0 0 0 20px;
+	border-bottom:1px solid #DCDCDC;
+	background-image:url('/images/television/list_ico.png');
+	background-repeat: no-repeat;
+	background-position:10px 5px;
+	color:#666666;
+}
+
+div#movie_link h1.top_border
+{
+	margin-top:50px;
+	border-top:1px solid #DCDCDC;
+}
+
+div#movie_link ul
+{
+	padding:10px;
+}
+
+div#movie_link ul li
+{
+	float:left;
+	margin-left:20px;
+}
+
+div#movie_link ul li a:hover
+{
+	text-decoration: underline;
+}
+
+div#movie_detail
+{
+	
+	border:	1px solid #DCDCDC;
+	margin-top:20px;
+	padding:10px 0;
+	line-height: 2em;
+}
+div#movie_detail h1
+{
+	font-size:	14px;
+	margin:		0;
+	padding:	0 0 0 20px;
+	border-bottom:1px solid #DCDCDC;
+	background-image:url('/images/television/list_ico.png');
+	background-repeat: no-repeat;
+	background-position:10px 5px;
+	color:#666666;
+}
+
+div#movie_detail div.detail
+{
+	padding:10px;
+	color:#0360AF;
+}
+
+div.content div.center {
+    margin-left: 200px;
+    width:800px;
+}
+
+div#denglu_comment{
+	margin-top:20px;
+}

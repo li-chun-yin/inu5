@@ -1,0 +1,53 @@
+<!--<link href="/css/intranet/television/category/index.css" rel="stylesheet" type="text/css" />-->
+ <script>var JSON_DATA=<?php echo $this->json_data;?>;</script>
+<div class="location"><span>影视娱乐管理->网站管理</span></div>
+<!-- ********************************************************************** -->
+<div id="action_bar">
+	<button id="del">Delete Select Site</button>
+	<button id="add">Create New Site</button>
+</div>
+<div id="content">
+	<table id="list_table">
+		<thead>
+			<tr>
+				<th><input type="checkbox" name="check_all" /></th>
+				<th>网站名称</th>
+				<th>网站URL</th>
+				<th>点击数</th>
+				<th>是否验证</th>
+				<th>推荐时间</th>
+				<th>添加时间</th>
+				<th>添加IP</th>
+				<th>编辑</th>
+			</tr>
+		</thead>
+		<tbody>
+		</tbody>
+		<tfoot>
+			<tr>
+				<td colspan="100">
+					<div class="pagebar"></div>
+				</td>
+			</tr>
+		</tfoot>
+	</table>
+</div>
+<!-- ***************************************************************** -->
+<link rel="stylesheet" href="/js/jquery/jquery-ui/development-bundle/themes/base/jquery.ui.all.css">
+<script src="/js/jquery/jquery-ui/development-bundle/ui/jquery.ui.core.js"></script>
+<script src="/js/jquery/jquery-ui/development-bundle/ui/jquery.ui.widget.js"></script>
+<script src="/js/jquery/jquery-ui/development-bundle/ui/jquery.ui.mouse.js"></script>
+<script src="/js/jquery/jquery-ui/development-bundle/ui/jquery.ui.draggable.js"></script>
+<script src="/js/jquery/jquery-ui/development-bundle/ui/jquery.ui.position.js"></script>
+<script src="/js/jquery/jquery-ui/development-bundle/ui/jquery.ui.dialog.js"></script>
+<!-- ********************************************************************** -->
+<link rel="stylesheet" href="/js/jquery/loadmask/loadmask.css">
+<script src="/js/jquery/loadmask/loadmask.js"></script>
+<!-- ********************************************************************** -->
+<script type="text/javascript" src="/js/intranet/list_manager.js"></script>
+<script src="/js/intranet/television/website/index.js" type="text/javascript"></script>
+<!-- ********************************************************************** -->
+<div id="dialog">
+	<?php include_once(APP_PATH.'intranet/views/scripts/television/website/dialog.phtml');?>
+</div>
+

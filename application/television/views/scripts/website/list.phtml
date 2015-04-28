@@ -1,0 +1,60 @@
+<script>var JSON_DATA=<?php echo $this->websites;?>;</script>
+<!-- main -->
+<div class="wrap">
+  <!--<div class="position">当前位置：<a href='/'>首页</a>&nbsp;&nbsp;&raquo;&nbsp;&nbsp;<a href='/list/?14.html' >记录片</a></div>-->
+  <div class="mainleft">
+    <div class="channellist">
+      <h2><a href='/'>首页</a> &raquo; <a href='#' >所有网站</a></h2>
+      <div class="tjlist" id="list_box">
+<!--      <div class="pagebox"></div>-->
+        <ul>
+        </ul>
+        <div class="blank_4px"></div>
+<!--        <div class="pagebox"></div>-->
+      </div>
+    </div>
+  </div>
+<div class="mainright">
+	<div class="listhit" id="movie_hot">
+	<h2>热门  TOP<?php echo $this->hot_movies['total'];?></h2>
+	<div class="blank_4px"></div>
+	<ul>
+	<?php foreach($this->hot_movies['lists'] AS $list):?>
+		<li>
+			<span><?php echo $list['movie_hot']?></span>
+			<a href="/television/movie/detail?movie_id=<?php echo $list['movie_id']?>" title="<?php echo $list['movie_name']?>"><?php echo $list['movie_name'];?></a>
+		</li>
+	<?php endforeach;?>
+	<ul>
+	<div class="blank_4px"></div>
+	</div>
+	<div class="blank_4px"></div>
+
+	<div class="listhit" id="recommend_movies">
+		<h2>推荐电影</h2>
+		<div class="blank_4px"></div>
+		<ul>
+		<?php foreach($this->recommend_movies['lists'] AS $list):?>
+			<li>
+				<span><?php echo $list['movie_recommend_time']?></span>
+				<a href="/television/movie/detail?movie_id=<?php echo $list['movie_id']?>" title="<?php echo $list['movie_name']?>"><?php echo $list['movie_name'];?></a>
+			</li>
+		<?php endforeach;?>
+		</ul>
+		<div class="blank_4px"></div>
+		</div>
+	</div>
+	<div class="blank_4px"></div>
+<!-- ********************************************************************** -->
+<script src="/js/television/list_manager.js"></script>
+<script src="/js/television/website/list.js"></script>
+<!-- ********************************************************************** -->
+<script src="/js/television/index.js"></script>
+<!-- Baidu Button BEGIN -->
+<script type="text/javascript" id="bdshare_js" data="type=slide&img=1&pos=left&uid=688980" ></script>
+<script type="text/javascript" id="bdshell_js"></script>
+<script type="text/javascript">
+		var bds_config = {"bdTop":0};
+		document.getElementById("bdshell_js").src = "http://bdimg.share.baidu.com/static/js/shell_v2.js?cdnversion=" + new Date().getHours();
+</script>
+<!-- Baidu Button END -->

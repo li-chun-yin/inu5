@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+	<script type="text/javascript" src="/js/jquery/jquery.js"></script>
+	<script type="text/javascript" src="/js/intranet/default.js"></script>
+	<link rel="stylesheet" type="text/css" href="/css/intranet/default.css" media="all" />
+</head>
+<body>
+	<div class="header">
+		<?php echo $this->layout()->header;?>
+	</div>
+	<div class="content">
+		<div class="left">
+			<?php echo $this->layout()->left;?>	
+		</div>
+		<div class="center">
+			<?php echo $this->layout()->content;?>	
+		</div>
+	</div>
+	<div class="footer">
+		<?php echo $this->layout()->footer;?>
+	</div>
+	<div id="loadmask"><!-- loading... --></div>
+</body>
+</html>

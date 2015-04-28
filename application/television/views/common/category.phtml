@@ -1,0 +1,91 @@
+<style>
+div.category ul{
+	width:170px;
+	padding:30px 30px 30px 0;
+}
+
+div.category ul li.active a{
+	border-left:5px solid #DD4B39;
+	color:#DD4B39;
+}
+
+div.category ul li a{
+	border-left:5px solid #FFFFFF;
+	font-size:13px;
+	padding:5px 5px 5px 50px;
+	width:100px;
+	display:block;
+	cursor:pointer;
+	color:#0360AF;
+}
+
+div.category ul li a:hover{
+	border-left:5px solid #EEEEEE;
+	background:#EEEEEE;
+}
+
+div.category ul li.active a:hover{
+	border-left:5px solid #DD4B39;
+}
+</style>
+<div class="category">
+	<ul>
+		<li {if empty($smarty.get.category_code)}class="active"{/if}><a href="/movie_list_cc_0.html" data_id="0">所有</a></li>
+{foreach key=key item=item from=$category_data}
+	{if strlen($item.category_code)==2}
+		<li {if isset($smarty.get.category_code) && $smarty.get.category_code == $item.category_code}class="active"{/if}>
+			<a href="/movie_list_cc_{$item.category_code}.html" data_id="{$item.category_code}">{$item.category_name}</a>
+		</li>
+	{else if isset($smarty.get.category_code) && $smarty.get.category_code == $item.category_code}
+		<li class="active">
+			<a href="/movie_list_cc_{$item.category_code}.html" data_id="{$item.category_code}">{$item.category_name}</a>
+		</li>
+	{/if}
+{/foreach}
+	</ul>
+</div>
+<script type="text/javascript">
+(function($){
+	var category	= {json_encode($category_data)};
+	$(document).ready(function(){
+		$('div.category>ul>li>a').mouseover(function(e){
+			if(e.target == this){
+				category_mouseover($(this));
+			}
+		});
+
+		$('div.category>ul').mouseout(function(e){
+			//alert(1);
+			if(e.target == this){
+				$('div.category>ul>li[for]').detach();
+			}
+		});
+
+		$('div.category>ul>li').click(function(e){
+			$('div.category>ul>li[class="active"]').removeClass('active');
+			$(this).addClass('active');
+		});
+	});
+
+	category_mouseover	= function(e){
+		var this_id = e.attr('data_id');
+		var ac_id = $('div.category>ul>li[class="active"]>a').attr('data_id');
+		if(this_id == 0)return;
+		if($('div.category>ul>li[for="'+this_id+'"]').length>0)return;
+		for(i in category){
+			if(category[i].category_code.substr(0,this_id.length) == this_id && category[i].category_code.length == this_id.length+3){
+				if(category[i].category_code !== ac_id){
+					e.parent().after(	'<li for="'+this_id+'" onclick="replaceActive($(this))">'+
+										'	<a href="/movie_list_cc_'+category[i].category_code+'.html" data_id="'+category[i].category_code+'" onmouseover="category_mouseover($(this))">'+category[i].category_name+'</a>'+
+										'</li>');
+				}
+			}
+		}
+	}
+	replaceActive = function (e){
+		var this_id = e.attr('for');
+		$('div.category>ul>li[class="active"]').removeClass('active');
+		e.addClass('active');
+	}
+})(jQuery);
+</script>

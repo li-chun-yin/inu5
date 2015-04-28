@@ -1,0 +1,20 @@
+<html>
+<head>
+	<title>图片上传</title>
+	<script type="text/javascript" src="/js/jquery/jquery.js"></script>
+</head>
+<body>
+	<script type="text/javascript">
+		var image_url = '<?php echo $this->image_url?>';
+		var return_tag = '<?php echo $this->return_tag?>';
+		if(image_url && return_tag){
+			opener.$('#'+return_tag).val(image_url);
+			window.close();
+		}
+	</script>
+	<form name="upform" method="post" enctype="multipart/form-data" />
+		<input type="file" name="upfile"/>
+		<input type="submit" value="提交"/>
+	</form>
+</body>
+</html>

@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+Disallow: /intranet
+Disallow:/television/crawl
+Sitemap: http://www.inu5.com/sitemap.xml

@@ -1,0 +1,187 @@
+body{
+	margin:0px;
+	padding:0px;
+	font-family:arial;
+	font-size:12px;
+	color:#333;	
+	background-image:url("/images/intranet/bg/left_bg_n.gif");
+	background-color:#FFFFFF;
+	background-position:-6px 0;
+	background-repeat:repeat-y;
+}
+
+a{
+	color:#536FE5;
+	text-decoration: none;
+}
+
+ul{
+	margin:0;
+	padding:0;
+	list-style:none;
+	list-style-position:inside;
+}
+
+li,h3{
+	margin:0;
+	padding:0;
+}
+
+.date_input{width:80px;}
+.float_left{float:left;}
+.float_right{float:right;}
+.none {display:none;}
+/*******************************************************************************************************************************************************/
+div.header{
+	height:20px;
+	padding:15px 20px;
+	background:url("/images/intranet/bg/header_bg.gif") repeat scroll 0 0 transparent;
+}
+div.header ul{}
+div.header ul li{
+	float:left;
+	color:#5E6882;
+}
+div.header ul li.float_right{
+	float:right;
+}
+div.header ul li a{
+	cursor:pointer;
+	color:#B0B5C2;
+}
+/*******************************************************************************************************************************************************/
+div.left{
+	width: 206px;
+	float:left;
+}
+
+div.left div.menu{
+	float:left;
+	padding:10px;
+	width:180px;
+	height:800px;
+}
+
+div.left div.menu h3.title{
+	padding-bottom:10px;
+	border-bottom:1px solid #EAEAEA;
+}
+
+div.left div.menu ul li{
+	padding:5px;
+}
+
+div.left div.menu ul li.active{
+	background-color: #2B3557;
+	border: 1px solid #1A233D;
+}
+
+div.left div.menu ul li.active a{
+	color: #B0B5C2;
+}
+
+div.left a#open_menu{
+	background-image: url("/images/intranet/bg/bt_arrow_v04.gif");
+    background-position: 1px center;
+    background-repeat: no-repeat;
+    border-left: 1px solid #E8E8E8;
+    cursor: pointer;
+    display: block;
+    height: 500px;
+    overflow: hidden;
+    text-indent: -1000em;
+    width: 5px;
+}
+/*******************************************************************************************************************************************************/
+div.center{
+	margin-left:206px;
+	background-color:#FFFFFF;
+	border-left: 1px solid;
+}
+
+div.center div#memo{
+	border-bottom:1px solid #A6A6A6;
+	padding-left:10px;
+}
+
+div.center div#content{
+	clear:right;
+}
+
+div.center div#action_bar{
+	font-size:14px;
+	font-weight:bold;
+}
+
+div.center div#action_bar input.search_text{
+	width:150px;
+}
+/*******************************************************************************************************************************************************/
+div.footer{	
+	clear:both;
+	width:100%;
+	border-top:3px #617FFF solid;
+	background-color:#FFFFFF;
+}
+
+div.footer p#copyright{
+	text-align:center;
+	margin:0;
+	padding:20px;
+}
+
+/*******************************************************************************************************************************************************/
+
+div.location{
+	padding:10px;
+	padding-bottom:0;
+	border-bottom:1px solid #A6A6A6;
+}
+
+div.location span{
+	width:145px;
+	display: inline-block;
+	padding:5px;
+	border:1px solid #A6A6A6;
+	border-bottom:0;
+	color: #3653D1;
+	font-weight:bold;
+	text-decoration:underline;
+}
+/*******************************************************************************************************************************************************/
+table#list_table	{width:98%;border-collapse:collapse;border-top:2px solid #DBDBDB;}
+table#list_table thead th	{border-bottom:2px solid #DBDBDB;}
+table#list_table thead tr 			{}
+table#list_table thead tr td			{border-bottom:1px solid #CBCBCB;padding:7px 0px 5px 0px;height:18px;font-weight:bold;text-align:center;background-color:#F9F9F9;color:#1A233D;}
+td.even	,
+table#list_table thead tr td.even	{background-color:#F4F4F4;}
+table#list_table tbody 				{border-bottom:1px solid #B4B4B4;}
+table#list_table tbody tr			{border-bottom:1px solid #B4B4B4;}
+table#list_table tbody tr td		{border-bottom:1px solid #E4E4E4;padding:4px 5px 3px;height:18px;color:#555;text-align:center;}
+
+table#list_table tbody tr td.even	{background-color:#F7F7F7;}
+table#list_table tbody tr.hover td	{background-color:#BDC7DE;}
+table#list_table tbody tr td.nolist	{background-color:#F5F5F5;text-align: center;height: 150px;font-weight: bold;}
+table#list_table tbody tr td a		{cursor:pointer;text-decoration: underline;}
+table#list_table tfoot tr td		{border-top:2px solid #DBDBDB;padding:5px 0px;}
+/*******************************************************************************************************************************************************/
+div.pagebar					{float:left;height:40px;overflow:hidden;position:relative;top:1px;overflow:hidden;width:100%;}
+div.pagebar ul				{list-style:none;padding:0px;margin:0px;height:30px;float:right;}
+div.pagebar ul li			{float:left;height:26px;vertical-align: middle;padding:2px;line-height:26px;}
+div.pagebar a				{border:1px solid #CBCBCB;padding:2px 5px;cursor:pointer;color:#333;vertical-align: middle;}
+div.pagebar a.on			{background-color:#EAEAEA;color:#536FE5;cursor:default;font-weight:bold;}
+div.pagebar input			{width:30px;border:1px solid #CBCBCB;padding:2px;vertical-align: middle;}
+/*******************************************************************************************************************************************************/
+div#dialog{display:none;}
+div#dialog table{	border:2px #AAAAAA solid;
+					border-collapse:collapse;
+					width:100%;
+}
+div#dialog table .width95b {width:95%;}
+div#dialog table td,div#dialog table th{	border:1px #AAAAAA solid;
+											padding:5px;
+}
+
+div#dialog table th {text-align:right;}
+/*******************************************************************************************************************************************************/
+div#loadmask{width:100%;height:100%;position:absolute;left:0;top:0;display:none;}

@@ -1,0 +1,78 @@
+<link href="/css/intranet/television/movie/dialog.css" rel="stylesheet" type="text/css" />
+<form onsubmit="return false">
+<input type="hidden" name="movie_id" value="0" />
+	<table>
+		<tr>
+			<th><label for="movie_name">影片名称：</label></th>
+			<td><input id="movie_name" type="text" name="movie_name" class="width95b validation"/></td>
+		</tr>
+		<tr>
+			<th><label for="movie_check_flag">通过验证：</label></th>
+			<td>
+				<input type="radio" name="movie_check_flag" checked="checked" value="F" />否
+				<input type="radio" name="movie_check_flag" value="T" />是
+			</td>
+		</tr>
+		<tr>
+			<th><label for="movie_list_img_url">影片图片：</label><input type="button" value="本地上传" onclick="open_up_img('movie_list_img_url');"/></th>
+			<td>
+				http://<input id="movie_list_img_url" type="text" name="movie_list_img_url" />
+			</td>
+		</tr>
+<!--		<tr>-->
+<!--			<th><label for="movie_page_img_url">影片介绍图片：</label></th>-->
+<!--			<td>http://<input id="movie_page_img_url" type="text" name="movie_page_img_url" /></td>-->
+<!--		</tr>-->
+		<tr>
+			<th><label for="movie_starring">主演：</label></th>
+			<td><input id="movie_starring" type="text" name="movie_starring" class="width95b"/><br/>多个之间用“&”间隔</td>
+		</tr>
+		<tr>
+			<th><label for="movie_director">导演：</label></th>
+			<td><input id="movie_director" type="text" name="movie_director" class="width95b"/><br/>多个之间用“&”间隔</td>
+		</tr>
+		<tr>
+			<th><label for="movie_release_date">上映日期：</label></th>
+			<td><input id="movie_release_date" type="text" name="movie_release_date" />例:1970-01-01</td>
+		</tr>
+		<tr>
+			<th><label for="fk_category_code">所属类别：</label></th>
+			<td>
+				<select name="fk_category_codes[]" class="validation">
+					<!-- option -->
+				</select>
+				<input type="hidden" name="fk_category_code" value='0'/>
+			</td>
+		</tr>
+		<tr>
+			<th>
+				<label for="movie_online_url">在线观看URL：</label>
+				<button onclick="ad_url($(this))">+</button>
+				<button onclick="de_url($(this))">-</button>
+			</th>
+			<td>
+				<div>http://
+					<input class="movie_online_url" type="text" name="movie_online_url[]"/>
+					<input type="hidden" name="movie_online_url_id[]"/>
+				</div>
+			</td>
+		</tr>
+		<tr>
+			<th>
+				<label for="movie_download_url">下载URL：</label>
+				<button onclick="ad_url($(this))">+</button>
+				<button onclick="de_url($(this))">-</button>
+			</th>
+			<td>
+				<div>http://
+					<input class="movie_download_url" type="text" name="movie_download_url[]"/>
+					<input type="hidden" name="movie_download_url_id[]"/>
+				</div>
+			</td>
+		</tr>
+		<tr>
+			<th><label for="movie_description">备注：</label></th>
+			<td><textarea id="movie_description" name="movie_description" class="width95b"></textarea></td>
+		</tr>
+	</table>
+</form>

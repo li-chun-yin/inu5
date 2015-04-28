@@ -1,0 +1,25 @@
+<link href="/css/television/movie/list.css" rel="stylesheet" type="text/css" />
+<!-- *************************************************************************************************************** -->
+<div class="movie_lists" id="movie_lists">
+	{if $movies.error == true}
+		<p>{$movies.error_message}</p>
+	{else}
+		<ul>
+		{foreach key=key item=item from=$movies.lists}
+			<li class="movie_item">
+				<img data="http://{$item.movie_list_img_url}" alt="{$item.movie_name}" align="center" onerror="this.src='/images/nopic.gif'"/>
+				<h1><a href="/movie_detail_id_{$item.movie_id}.html" title="{$item.movie_name}">{$item.movie_name}</a></span></h1>
+				<p class="movie_starring">{if $item.movie_starring}<strong> 主演：{$item.movie_starring}</strong>{/if}</p>
+				<p class="movie_director">{if $item.movie_director}<strong> 导演：{$item.movie_director}</strong>{/if}</p>
+				<p>{if $item.movie_release_date} 上映：{$item.movie_release_date}{/if}</p>
+			</li>
+		{/foreach}
+		</ul>
+		<div class="page_bar">
+			{pagebar style=list total=$movies.total list_size=$movies.list_size current=$movies.page page_size=10}
+		</div>
+	{/if}
+</div>
+<!-- ********************************************************************** -->
+<script src="/js/television/movie/list.js"></script>
+<!-- ********************************************************************** -->

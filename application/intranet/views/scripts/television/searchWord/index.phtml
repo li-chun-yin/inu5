@@ -1,0 +1,70 @@
+<!--<link href="/css/intranet/television/category/index.css" rel="stylesheet" type="text/css" />-->
+<script>var JSON_DATA=<?php echo $this->json_data;?>;</script>
+<div class="location"><span>影视娱乐管理->搜索管理</span></div>
+<!-- ********************************************************************** -->
+<div id="memo">
+	<p>! <span style="color:red;">红色</span>：从来没有抓取过。<span style="color:blue;">蓝色</span>：抓取过，数据可能过时。<span style="color:green;">绿色</span>：抓取过，可能是最近抓取的。</p>
+</div>
+
+<!-- ********************************************************************** -->
+<div id="action_bar">
+	<div class="float_left">
+		<button id="crawl">抓取选中的</button>
+		<button id="crawl_flag">仅状态改已抓取</button>
+	</div>
+	<div class="float_right">
+		<form name="search_form" onsubmit="return false;">
+			只显示
+			<select name="search_word_display">
+				<option value="">未选择</option>
+				<option value="HAVING SUM(search_word_crawl_true_cnt)='0'">红色</option>
+				<option value="HAVING SUM(`search_word_useful_false_cnt`)>'0' AND SUM(`search_word_crawl_false_cnt`)>'0' AND SUM(search_word_crawl_true_cnt)>'0'">蓝色</option>
+				<option value="HAVING SUM(`search_word_useful_false_cnt`)='0' AND SUM(`search_word_crawl_false_cnt`)>'0' AND SUM(search_word_crawl_true_cnt)>'0'">绿色</option>
+			</select>
+			日期范围:<input type="text" name="sdate" class="date_input" id="sdate"></input>~<input type="text" name="edate" class="date_input" id="edate"></input>
+			<select name="sk">
+				<option value="search_word_value">关键字</option>
+			</select>
+			<input type="text" name="sv" class="search_text"/>
+			<input type="button" value="Search" name="search"/>
+		</form>
+	</div>
+</div>
+<div id="content">
+	<form name="list_form" method="post" onsubmit="return false;">
+		<table id="list_table">
+			<thead>
+				<tr>
+					<th><input type="checkbox" name="check_all" /></th>
+					<th>关键字</th>
+					<th>对用户有用</th>
+					<th>对用户没用</th>
+					<th>已抓取</th>
+					<th>未抓取</th>
+					<th>搜索频率</th>
+				</tr>
+			</thead>
+			<tbody>
+			</tbody>
+			<tfoot>
+				<tr>
+					<td colspan="100">
+						<div class="pagebar"></div>
+					</td>
+				</tr>
+			</tfoot>
+		</table>
+	</form>
+</div>
+<!-- ********************************************************************** -->
+<link rel="stylesheet" href="/js/jquery/jquery-ui/development-bundle/themes/base/jquery.ui.all.css">
+<script src="/js/jquery/jquery-ui/development-bundle/ui/jquery.ui.core.js"></script>
+<script src="/js/jquery/jquery-ui/development-bundle/ui/minified/jquery.ui.datepicker.min.js"></script>
+<script src="/js/jquery/jquery-ui/development-bundle/ui/i18n/jquery.ui.datepicker-zh-CN.js"></script>
+<!-- ********************************************************************** -->
+<link rel="stylesheet" href="/js/jquery/loadmask/loadmask.css">
+<script src="/js/jquery/loadmask/loadmask.js"></script>
+<!-- ********************************************************************** -->
+<script type="text/javascript" src="/js/intranet/list_manager.js"></script>
+<script src="/js/intranet/television/searchWord/index.js" type="text/javascript"></script>
+<!-- ********************************************************************** -->

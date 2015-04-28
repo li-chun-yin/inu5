@@ -1,0 +1,68 @@
+@CHARSET "UTF-8";
+div.movie_lists ul li.movie_item{
+    border: 1px solid #97BF2B;
+    float: left;
+    margin: 8px;
+    overflow: hidden;
+    padding: 5px;
+    text-align: left;
+    width: 150px;
+    height: 250px;
+}
+div.movie_lists ul li.movie_item:hover{
+    background-color:#F6FF99;
+}
+
+div.movie_lists ul li.movie_item img{
+    border: 3px solid #FFFFFF;
+    height: 150px;
+    width: 120px;
+    margin: 0 10px;
+}
+
+div.movie_lists ul li.movie_item h1,
+div.movie_lists ul li.movie_item h1,a{
+	color:#666666;
+	margin:0;
+	padding:0;
+	text-align: center;
+	height:2em;
+	line-height:2em;
+	overflow:hidden;
+	display:block;
+	text-overflow: ellipsis;
+}
+
+div.movie_lists ul li.movie_item h1 span.update_date{
+	font-size:9px;
+	color:#999999;
+	font-weight:normal;
+}
+
+div.movie_lists ul li.movie_item p{
+	color:#0360AF;
+	line-height:2em;
+	margin:0;
+	padding:0;
+	height:24px;
+	overflow:hidden;
+	text-overflow: ellipsis;
+}
+
+div.movie_lists ul li.movie_item p strong{
+	font-weight:normal;
+}
+
+div.content div.center{
+	float:none;
+	margin-left:200px;
+}
+
+div.page_bar{
+	clear:both;
+	padding-left:150px;	
+	padding-top:50px;	
+}
+div.page_bar ul li{
+	color:#0000CC;
+}

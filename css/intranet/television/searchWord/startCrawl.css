@@ -1,0 +1,19 @@
+@CHARSET "UTF-8";
+h1{
+	font-size:14px;
+}
+
+h1 strong{
+	color:red;
+	text-decoration:underline;
+}
+
+#crawl_content p strong,
+#crawl_failed p strong{
+	color:red;
+}
+#crawl_content p,
+#crawl_failed p{
+	font-size:10px;
+}
+#crawl_failed{display:none;}

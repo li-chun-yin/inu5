@@ -1,0 +1,293 @@
+/***************************************************** HEADER ***********************************************************/
+div.header{
+	height:25px;
+	margin-bottom:20px;
+}
+div.header div#bdshare{
+	float:right;	
+}
+/*************************************************RECOMMEND TDOAY********************************************************/
+div.recommend_today{
+	
+}
+div.recommend_today div.action_bar_background{
+	background:#DBEAF8;
+	border:1px solid #95C4F0;
+	width:520px;
+	margin:auto;
+	height:65px;
+}
+div.recommend_today div#action_bar{
+	width: 620px;
+	height:65px;
+    margin:-75px auto 0;
+
+}
+div.recommend_today div#action_bar div.action_content{
+	width:520px;
+    margin:auto;
+    float:left;
+    overflow:hidden;
+    margin-left:20px;*-margin-left:15px;
+}
+
+div.recommend_today div#action_bar div.action_content ul{
+	width:1400px;
+	height:100%;
+	margin-left:-216px;
+}
+
+div.recommend_today a#action_prev{
+	width:0;
+	height:0;
+	border-right:15px solid #CCCCCC;
+	border-top:15px solid #FFFFFF;
+	border-left:15px solid #FFFFFF;
+	border-bottom:15px solid #FFFFFF;
+	display:block;
+	float:left;
+	margin-top:25px;
+	cursor:pointer;
+	overflow:hidden;
+}
+
+div.recommend_today a#action_prev.hover{
+	border-right:15px solid #333333;
+}
+
+div.recommend_today a#action_next{
+	width:0;
+	height:0;
+	border-left:15px solid #CCCCCC;
+	border-top:15px solid #FFFFFF;
+	border-right:15px solid #FFFFFF;
+	border-bottom:15px solid #FFFFFF;
+	display:block;
+	float:right;
+	margin-top:25px;
+	cursor:pointer;
+	overflow:hidden;
+	padding:0;
+}
+div.recommend_today a#action_next.hover{
+	border-left:15px solid #333333;
+}
+
+div.recommend_today div#action_bar li{
+	width:40px;
+	height:50px;
+	float:left;
+	margin:15px 5px 0;
+	overflow:hidden;
+	border:2px solid #0360AF;
+	cursor:pointer;
+}
+
+div.recommend_today div#action_bar li.zoom{
+	width:60px;
+	height:75px;
+	margin:0 12.5px;
+}
+
+.new_zoom{
+	width:60px;
+	height:75px;
+	list-style:none;
+	list-style-position:inside;
+	border:2px solid #0360AF;
+}
+
+
+div.recommend_today div#action_bar li img,.new_zoom img{
+	width:100%;
+	height:100%;
+	vertical-align: center;
+	
+}
+div.recommend_today h1 a{
+	display:block;
+	color: #0360AF;
+	height: 15px;
+	overflow: hidden;
+	text-overflow: ellipsis;
+}
+div.recommend_today div.recommend_movie_detail{
+	margin: 20px auto;
+    width: 600px;
+    height:250px;
+    padding:10px;
+	border:1px solid #95C4F0;
+	clear:both;
+	color: #666666;
+	position:relative;
+    text-overflow: ellipsis;
+}
+
+div.recommend_today div.recommend_movie_detail div.detail{
+	position:absolute;
+	display:none;
+}
+
+div.recommend_today div.recommend_movie_detail div.action{
+	display:block;
+	background:#FFFFFF;
+	z-index:10;
+}
+
+div.recommend_today div.recommend_movie_detail div.left img{
+	width:200px;
+	height:250px;
+}
+
+div.recommend_today div.recommend_movie_detail div.right{
+	float:left;
+	width:390px;
+	height:250px;
+	padding-left:10px;
+	overflow:hidden;
+}
+
+div.recommend_today div.recommend_movie_detail div.right p{
+	line-height: 22px;
+	margin:10px 0 0 0;
+	padding:0;
+}
+
+div.recommend_today div.recommend_movie_detail div.right p.starring,
+div.recommend_today div.recommend_movie_detail div.right p.director
+{
+	height:24px;
+	overflow:hidden;
+	text-overflow: ellipsis;	
+}
+
+div.recommend_today div.recommend_movie_detail div.right strong{
+	font-weight:normal;
+}
+
+/**************************************************SEARCH BOX*************************************************************/
+div.search_box{
+	clear:both;
+	width:600px;
+	margin:20px auto;
+}
+div.search_box img{
+	vertical-align: center;
+}
+div.search_box div{
+	float:left;
+}
+
+div.search_box div.top20{
+	padding-top:20px;
+}
+div.search_box div.top15{
+	padding-top:15px;
+}
+div.search_box div.left5{
+	margin-left:5px;
+}
+div.search_box input.search_word{
+	margin-left:25px;
+	border:1px solid #95C4F0;
+	height:28px;
+	width:300px;
+	font-size: 24px;
+}
+
+
+div.search_box div.logo{
+	width:101px;
+}
+
+div.search_box div.keyword{
+	width:327px;
+}
+div.search_box div.width97{
+	width:97px;
+}
+div.search_box div.share{
+	width:37px;
+}
+
+div.search_box input.search_submit{
+	vertical-align: bottom;
+	background:url('/images/television/blue_btn.png');
+	height:32px;
+	width:97px;
+	padding:0;
+	margin:0;
+	border:0;
+	cursor:pointer;
+	font-size:14px;
+	color: #FFFFFF;
+	font-weight: bold;
+	letter-spacing: 5px;
+}
+
+/**************************************************RECOMMEND WEBSITE************************************************************/
+div.recommend_website {
+	width:600px;
+	padding:10px;
+	margin:auto;
+	clear: both;
+}
+
+div.recommend_website h3{
+	color:#666666;
+	font-size:14px;
+	line-height:2em;
+	margin:10px 0;
+	padding:0 20px;
+	border-bottom:1px solid #E5E5E5;
+}
+
+div.recommend_website ul li{
+	width:140px;
+	margin:0 5px;
+	display:block;
+	float:left;
+	line-height:2em;
+}
+
+div.recommend_website ul li a{
+	color: #0360AF;
+}
+
+div.recommend_website ul li a:hover{
+	text-decoration: underline;
+}
+/**************************************************RECOMMEND WEBSITE************************************************************/
+div.hot_movie {
+	clear:both;
+	width:600px;
+	padding:10px;
+	margin:auto;
+}
+
+div.hot_movie h3{
+	color:#666666;
+	font-size:14px;
+	line-height:2em;
+	margin:10px 0;
+	padding:0 20px;
+	border-bottom:1px solid #E5E5E5;
+}
+
+div.hot_movie ul li{
+	width:140px;
+	height:2em;
+	overflow:hidden;
+	margin:0 5px;
+	display:block;
+	float:left;
+	line-height:2em;
+}
+
+div.hot_movie ul li a{
+	color: #0360AF;
+}
+
+div.hot_movie ul li a:hover{
+	text-decoration: underline;
+}

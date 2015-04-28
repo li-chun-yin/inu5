@@ -1,0 +1,3 @@
+@CHARSET "UTF-8";
+div#content select.category{width:16%; height:500px;}
+div#content div#action_bar{text-align:center;}

@@ -1,0 +1,48 @@
+<link href="/css/television/search/index.css" rel="stylesheet" type="text/css" />
+<!-- *************************************************************************************************************** -->
+<div class="search_lists" id="search_lists">
+	{if $movies.error == true}
+		<p>{$movies.error_message}</p>
+	{else}
+		<ul>
+		{foreach key=key item=item from=$movies.lists}
+			<li class="movie_item">
+				<img data="http://{$item.movie_list_img_url}" alt="{$item.movie_name}" align="left" onerror="this.src='/images/nopic.gif'"/>
+				<h1><a href="/movie_detail_id_{$item.movie_id}.html" title="{$item.movie_name}">{$item.movie_name}</a> <span class="update_date">更新日期:{$item.movie_insert_date}</span></h1>
+				{if $item.movie_starring}<p><strong> 主演：{$item.movie_starring}</strong></p>{/if}
+				{if $item.movie_director}<p><strong> 导演：{$item.movie_director}</strong></p>{/if}
+				{if $item.movie_description}<p>{$item.movie_description}</p>{/if}
+			</li>
+		{/foreach}
+		</ul>
+		<div class="page_bar">
+			{pagebar total=$movies.total list_size=$movies.list_size current=$movies.page page_size=10}
+			<p class="search_time">一共找到约 <u>{$movies.total}</u> 条结果 （用时 <u>{$movies.search_time}</u> 秒）</p>
+		</div>
+		{if count($movies.related_words)>0}
+		<div class="related_words">
+			<h1>相关关键字</h1>
+			<ul>
+			{foreach key=key item=item from=$movies.related_words}
+				<li><a href="/television/Search?searchword={$item}" title="{$item}">{$item}</a></li>
+			{/foreach}
+			</ul>
+		{/if}
+		</div>
+	{/if}
+</div>
+
+<!--{if $movies.error == false}-->
+<div class="customer_valuation" style="clear:both">
+	<form name="customer_valuation_form" onsubmit="return false;">
+		<input type="hidden" name="search_word_id" value="{$search_word_id}" />
+		<lable>亲！ 搜索结果对你有用吗?</lable>
+		<input type="radio" name="search_word_useful_flag" value="T" checked="checked" />有用
+		<input type="radio" name="search_word_useful_flag" value="F" />没用
+		<input type="submit" value="提交" />
+	</form>
+</div>
+<!--{/if}-->
+<!-- ********************************************************************** -->
+<script src="/js/television/search/index.js"></script>
+<!-- ********************************************************************** -->

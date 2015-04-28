@@ -1,0 +1,56 @@
+<link href="/css/television/movie/detail.css" rel="stylesheet" type="text/css" />
+<!-- *************************************************************************************************************** -->
+<div id="movie_info">
+	<img src="http://{$data.movie_list_img_url}" alt="{$data.movie_name}" align="left"  onerror="this.src='/images/nopic.gif'"/>
+	<ul>
+		<li><strong>影片名： </strong> <h1>{$data.movie_name}</h1></li>
+		<li><strong>主 演： </strong> <span>{$data.movie_starring}</span></li>
+		<li><strong>导 演： </strong> <span>{$data.movie_director}</span></li>
+		<li><strong>上映日期： </strong> <span>{$data.movie_release_date}</span></li>
+		<li><strong>浏览次数： </strong> <span>{$data.movie_hot}</span></li>
+		<li><strong>是否验证： </strong> <span>{$data.movie_ischeck}</span> <span class="red">(未通过验证的影片，可能存在病毒或者,无法正常观看。)</span></li>
+		<li>
+			<!-- Baidu Button BEGIN -->
+		    <div id="bdshare" class="bdshare_t bds_tools get-codes-bdshare">
+		        <span class="bds_more">分享到：</span>
+		        <a class="bds_qzone">QQ空间</a>
+		        <a class="bds_tsina">新浪微博</a>
+		        <a class="bds_tqq">腾讯微博</a>
+		        <a class="bds_renren">人人网</a>
+		        <a class="bds_msn">MSN</a>
+		    </div>
+			<!-- Baidu Button END -->
+		</li>
+	</ul>
+</div>
+<div id="movie_link">
+	{if count($data.movie_online_link)>0 }
+	<h1>{$data.movie_name} 在线观看URL</h1>
+	<ul>
+	{foreach key=key item=item from=$data.movie_online_link}
+		<li><a href="http://{$item.movie_link_url}" target="_blank" title="{$data.movie_name}">地址{$key+1}</a></li>
+	{/foreach}
+	</ul>
+	{/if}
+
+	{if count($data.movie_download_link)>0 }
+	<h1 class="top_border">{$data.movie_name} 下载资源URL</h1>
+	<ul>
+	{foreach key=key item=item from=$data.movie_online_link}
+		<li><a href="http://{$item.movie_link_url}" target="_blank" title="{$data.movie_name}">下载{$key+1}</a></li>
+	{/foreach}
+	</ul>
+	{/if}
+	<div style="clear:both;"></div>
+</div>
+{if $data.movie_description}
+<div id="movie_detail">
+	<h1>{$data.movie_name} 影片介绍</h1>
+	<div class="detail">
+		{$data.movie_description}
+	</div>
+</div>
+{/if}
+<!-- pintlun BEGIN -->
+<script type='text/javascript' charset='utf-8' src='http://open.denglu.cc/connect/commentcode?appid=46895denQgK0uBbbyMhOi0mjSeV1O5&postid={$data.movie_id}'></script>
+<!-- pinglun END -->

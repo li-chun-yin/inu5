@@ -1,0 +1,51 @@
+server {
+        listen       80; 
+        server_name  inu5.dev;
+		rewrite ^/(.*)$ http://www.inu5.dev/$1 last;
+}
+
+server {
+        listen       80;
+        server_name  www.inu5.dev;
+        index        index.php;
+        root          /home/www/inu5;
+
+
+        location / {
+            index index.php;
+ 			if (!-f $request_filename) {
+ 				rewrite ^/search_sw_([^_]*)(_p_)?(\d*).html /index.php?/television/search&searchword=$1&page=$3 last;
+ 				rewrite ^/movie_list_cc_([^_]*)(_p_)?(\d*).html /index.php?/television/movie/list&category_code=$1&page=$3 last;
+ 				rewrite ^/movie_detail_id_(.*).html /index.php?/television/movie/detail&movie_id=$1 last;
+                rewrite ^(.*) /index.php?$1 last;
+            }
+        }
+          
+        set $real_request_uri $request_uri;
+        if ($request_uri ~ ^/search_sw_([^_]*)(_p_)?(\d*).html) {
+        	set $real_request_uri  /television/search?searchword=$1&page=$3;
+        }
+        if ($request_uri ~ ^/movie_list_cc_([^_]*)(_p_)?(\d*).html) {
+        	set $real_request_uri  /television/movie/list?category_code=$1&page=$3;
+        }
+        if ($request_uri ~ ^/movie_detail_id_(.*).html) {
+        	set $real_request_uri  /television/movie/detail?movie_id=$1;
+        }
+        
+        location ~ \.php$ {
+            fastcgi_pass   127.0.0.1:9000;
+            fastcgi_index  index.php;
+            fastcgi_param  SCRIPT_FILENAME   /home/www/inu5$fastcgi_script_name;
+            fastcgi_param  REQUEST_URI   $real_request_uri;
+            include        fastcgi_params;
+        }
+        
+
+        location ~ \.(gif|jpg|jpeg|png|swf|bmp)$ {
+            expires        2d;
+        }
+
+        location ~ \.(css|js)$ {
+            expires        1d;
+        }
+}

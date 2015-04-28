@@ -1,0 +1,82 @@
+<link href="/css/intranet/television/movie/index.css" rel="stylesheet" type="text/css" />
+<script>
+var JSON_DATA	= <?php echo $this->json_data;?>;
+var CATEGORY	= <?php echo $this->category;?>;
+</script>
+<div class="location"><span>影视娱乐管理-&gt;影片管理</span></div>
+<!-- ********************************************************************** -->
+<div id="auto_bar">
+	<input type="text" name="movie_link_url" class="auto_url"/>
+	<button id="autoAddByUrl">URL自动抓取</button>
+</div>
+<div id="action_bar">
+	<div class="float_left">
+		<button id="del">删除选中的</button>
+		<button id="add">创建新的影片</button>
+		<button id="merege">合并选中的影片</button>
+	</div>
+	<div class="float_right">
+		<form name="search_form" onsubmit="return false;">
+			<select name="category">
+			<!-- js option -->
+			</select>
+			<select name="movie_check_flag">
+				<option value="">==是否验证==</option>
+				<option value="T">是</option>
+				<option value="F">否</option>
+			</select>
+			<select name="sk">
+				<option value="movie_name">影片名称</option>
+			</select>
+			<input type="text" name="sv" class="search_text"/>
+			<input type="button" value="Search" name="search"/>
+		</form>
+	</div>
+</div>
+<div id="content">
+	<div id="total_box">共 <strong> 0 </strong> 条记录.</div>
+	<form name="list_form" onsubmit="return false;">
+		<table id="list_table">
+			<thead>
+				<tr>
+					<th><input type="checkbox" name="check_all" /></th>
+					<th>影片名称</th>
+					<th>点击数</th>
+					<th>是否验证</th>
+					<th>推荐时间</th>
+					<th>添加时间</th>
+					<th>添加IP</th>
+					<th>编辑</th>
+				</tr>
+			</thead>
+			<tbody>
+			</tbody>
+			<tfoot>
+				<tr>
+					<td colspan="100">
+						<div class="pagebar"></div>
+					</td>
+				</tr>
+			</tfoot>
+		</table>
+	</form>
+</div>
+<!-- ***************************************************************** -->
+<link rel="stylesheet" href="/js/jquery/jquery-ui/development-bundle/themes/base/jquery.ui.all.css">
+<script src="/js/jquery/jquery-ui/development-bundle/ui/jquery.ui.core.js"></script>
+<script src="/js/jquery/jquery-ui/development-bundle/ui/jquery.ui.widget.js"></script>
+<script src="/js/jquery/jquery-ui/development-bundle/ui/jquery.ui.mouse.js"></script>
+<script src="/js/jquery/jquery-ui/development-bundle/ui/jquery.ui.draggable.js"></script>
+<script src="/js/jquery/jquery-ui/development-bundle/ui/jquery.ui.position.js"></script>
+<script src="/js/jquery/jquery-ui/development-bundle/ui/jquery.ui.dialog.js"></script>
+<!-- ********************************************************************** -->
+<link rel="stylesheet" href="/js/jquery/loadmask/loadmask.css">
+<script src="/js/jquery/loadmask/loadmask.js"></script>
+<!-- ********************************************************************** -->
+<script type="text/javascript" src="/js/intranet/list_manager.js"></script>
+<script src="/js/intranet/television/movie/index.js" type="text/javascript"></script>
+<!-- ********************************************************************** -->
+<div id="dialog">
+	<?php include_once(APP_PATH.'intranet/views/scripts/television/movie/dialog.phtml');?>
+</div>
+
